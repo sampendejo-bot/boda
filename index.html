@@ -206,6 +206,7 @@ nav.over a{color:var(--ivory)}
 .ptitle em{font-family:var(--script);font-style:normal;text-transform:none;letter-spacing:0;font-size:1.1em}
 .pline{background:var(--logo)!important;margin:20px 0}
 .plead{font-size:1.2rem;font-style:italic;font-weight:300;opacity:.9}
+.pnote{margin-top:8px;opacity:1;font-weight:400}
 .pbody{display:flex;align-items:center;gap:clamp(14px,3vw,36px);margin-top:30px}
 .pwin{flex:1;height:290px;overflow:hidden;border-top:1px solid rgba(90,20,40,.3);border-bottom:1px solid rgba(90,20,40,.3)}
 .ptrack{transition:transform .9s cubic-bezier(.65,0,.35,1);will-change:transform}
@@ -293,6 +294,18 @@ nav.over a{color:var(--ivory)}
 .hpanel{background:var(--wine) url('media/bg-hoteles.jpg') center/cover no-repeat}
 .dpanel{background:var(--wine) url('media/bg-dress.jpg') center/cover no-repeat}
 
+
+/* REGALO protagonista */
+.regalo{background:var(--wine);color:var(--ivory);padding:clamp(80px,12vw,150px) 0}
+.regalo .wrap{max-width:860px}
+.regalo h2,.regalo .eyebrow,.regalo .lead{color:var(--ivory)}
+.regalo .lead{font-size:1.3rem}
+.gift-card{margin:46px auto 0;padding:clamp(34px,6vw,64px) clamp(22px,5vw,56px);background:var(--ivory);color:var(--logo);text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.35);outline:1px solid rgba(235,227,218,.5);outline-offset:10px}
+.gift-card .caps{display:block;opacity:.8;font-size:.7rem}
+.gift-big{font-size:clamp(1.7rem,4.6vw,2.7rem);font-weight:400;line-height:1.25;margin:18px auto 0;max-width:20em}
+.gift-sub{margin-top:18px;font-size:1.1rem;font-style:italic;font-weight:300;opacity:.85}
+.gift-btn{display:inline-block;margin-top:30px;padding:18px 34px;background:var(--logo);color:var(--ivory);font-family:var(--sans);font-weight:300;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase}
+
 /* RSVP */
 .rsvp-note{max-width:30em;margin:30px auto 0;padding-top:26px;border-top:1px solid rgba(235,227,218,.4)}
 .rsvp-note .caps{display:block;opacity:.9;font-size:.64rem}
@@ -315,17 +328,11 @@ footer p{opacity:.7}
 @media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
 /* === AJUSTES 13-oct: Cómo llegar con flores, dress code, regalo, hashtag === */
-.trip{background:linear-gradient(rgba(26,10,16,.68),rgba(26,10,16,.8)),url('media/bg-flores.jpg') center/cover no-repeat}
-.trip h2,.trip .eyebrow,.trip .sub-h,.trip>.wrap>.note{color:var(--ivory)}
-.trip .tip{border-color:rgba(235,227,218,.55);color:var(--ivory)}
-.trip .tip p,.trip .tip .caps{color:var(--ivory)}
-.trip .tip b{color:#fff}
 .dnote{margin-top:26px;max-width:26em;font-size:1.02rem;font-style:italic;font-weight:300;line-height:1.55;opacity:.85}
 .dnote+.dnote{margin-top:10px}
-.regalo{background:var(--ivory);text-align:center}
+.regalo{text-align:center}
 .regalo .wrap{max-width:720px}
-.regalo .soon{display:inline-block;margin-top:28px;padding:10px 22px;border:1px solid rgba(90,20,40,.4);opacity:.75}
-.hashtag{display:block;font-family:var(--script);font-size:clamp(2.2rem,7vw,3.6rem);line-height:1.1;margin:6px 0 4px}
+.hashtag{display:block;font-family:var(--serif);font-style:normal;font-weight:400;font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:.14em;line-height:1.2;margin:10px 0 18px}
 footer .hh{opacity:.8;font-size:.62rem}
 @media(max-width:820px){.dnote{margin-left:auto;margin-right:auto}}
 </style>
@@ -518,6 +525,7 @@ footer .hh{opacity:.8;font-size:.62rem}
       <h3 class="ptitle">Programa</h3>
       <div class="hline pline"></div>
       <p class="plead">Todo el día en Hacienda La Bartola.</p>
+      <p class="plead pnote">Empezaremos puntuales. Recuerda llegar con anticipación.</p>
       <div class="pbody">
         <div class="pwin" id="pwin">
           <div class="ptrack" id="ptrack">
@@ -566,10 +574,15 @@ footer .hh{opacity:.8;font-size:.62rem}
 
 <section class="regalo" id="regalo">
   <div class="wrap fade">
-    <span class="caps eyebrow">Un detalle</span>
-    <h2>Lo más importante es celebrar <em>juntos</em></h2>
-    <p class="lead">Para quienes quieran tener un detalle con nosotros, hemos preparado una opción de regalo digital, sin complicaciones. Aquí encontrarán los datos de transferencia.</p>
-    <span class="caps soon">Datos próximamente</span>
+    <span class="caps eyebrow">Lo más importante es celebrar juntos</span>
+    <h2>Un regalo para nuestra <em>luna de miel</em></h2>
+    <p class="lead">Para quienes quieran tener un detalle con nosotros, hemos preparado una opción de regalo digital, sin complicaciones.</p>
+    <div class="gift-card">
+      <span class="caps">Aporte en dinero</span>
+      <p class="gift-big">Si quieres regalarnos algo, lo que más nos ayuda es un aporte para nuestra luna de miel.</p>
+      <p class="gift-sub">Los datos de transferencia estarán aquí muy pronto.</p>
+      <span class="gift-btn" aria-disabled="true">Datos de transferencia · próximamente</span>
+    </div>
   </div>
 </section>
 
@@ -580,7 +593,7 @@ footer .hh{opacity:.8;font-size:.62rem}
     <p class="lead">Cuéntanos si nos acompañas. Fecha límite por definir.</p>
     <div class="rsvp-note">
       <span class="caps">Invitación personal e intransferible</span>
-      <p>Amamos a los más chiquitos, pero esta noche es solo para los grandes.<br>Aprovechen para disfrutar sin preocupaciones: nosotros también lo haremos.</p>
+      <p>Amamos a los más chiquitos, pero esta noche es solo para adultos.<br>Vamos a disfrutar todos sin preocupaciones.</p>
     </div>
     <button class="btn" id="rsvpOpen" type="button">Confirmar</button>
   </div>
@@ -707,7 +720,7 @@ document.querySelectorAll('#htabs button').forEach(b=>b.addEventListener('click'
 
 // dress code: hover/click cambia las 3 fotos
 const DR={
- w:{sub:'Las mujeres pueden elegir vestidos largos elegantes, en colores sólidos de nuestra paleta.',hint:'Pasa el cursor o toca un color',
+ w:{sub:'Las mujeres pueden elegir vestidos largos elegantes, en colores sólidos (sin estampados) de nuestra paleta.',hint:'Pasa el cursor o toca un color',
     sw:[['vino','Vino','#531C30'],['chocolate','Chocolate','#44231A'],['ciruela','Ciruela','#58313D'],['ceniza','Ceniza','#857369']]},
  m:{sub:'Los hombres irán de smoking: camisa blanca y corbata negra.',hint:'Pasa el cursor o toca el color',sw:[['smoking','Negro','#0E0B0B']]}
 };
