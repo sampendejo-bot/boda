@@ -306,6 +306,20 @@ nav.over a{color:var(--ivory)}
 .gift-sub{margin-top:18px;font-size:1.1rem;font-style:italic;font-weight:300;opacity:.85}
 .gift-btn{display:inline-block;margin-top:30px;padding:18px 34px;background:var(--logo);color:var(--ivory);font-family:var(--sans);font-weight:300;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase}
 
+
+/* PANTALLA DE BIENVENIDA (activa la música) */
+.splash{position:fixed;inset:0;z-index:100;background:var(--bordeaux);color:var(--ivory);display:grid;place-items:center;text-align:center;padding:24px;transition:opacity .9s ease}
+.splash[hidden]{display:none}
+.splash.out{opacity:0;pointer-events:none}
+.splash .mono{width:min(92px,24vw);margin:0 auto 26px}
+.splash>div{width:100%;max-width:100%}
+.splash h1{font-weight:400;font-size:clamp(1.4rem,6.2vw,3.6rem);text-transform:uppercase;letter-spacing:.04em;line-height:1.05;display:flex;gap:.18em;justify-content:center;align-items:center;flex-wrap:wrap;white-space:normal}
+.splash h1 .y{font-family:var(--script);text-transform:none;font-size:.9em}
+.splash .sd{font-family:var(--sans);font-weight:300;letter-spacing:.3em;font-size:.74rem;text-transform:uppercase;margin-top:22px;opacity:.85}
+.splash button{margin-top:38px;padding:16px 44px;border:1px solid var(--ivory);background:none;color:var(--ivory);font-family:var(--sans);font-weight:300;letter-spacing:.34em;text-transform:uppercase;font-size:.7rem;cursor:pointer;transition:.25s}
+.splash button:hover{background:var(--ivory);color:var(--bordeaux)}
+.splash .sn{margin-top:16px;font-style:italic;opacity:.7;font-size:1rem}
+
 /* RSVP */
 .rsvp-note{max-width:30em;margin:30px auto 0;padding-top:26px;border-top:1px solid rgba(235,227,218,.4)}
 .rsvp-note .caps{display:block;opacity:.9;font-size:.64rem}
@@ -350,6 +364,16 @@ footer .hh{opacity:.8;font-size:.62rem}
 </nav>
 
 <button class="music" id="music" aria-label="Música" hidden><span class="ico">♪</span><span id="mtxt">Oye linda</span></button>
+<div class="splash" id="splash" hidden>
+  <div>
+    <img class="mono" src="media/monograma-marfil.png" alt="">
+    <h1><span>Caro</span><span class="y">y</span><span>Juanfe</span></h1>
+    <p class="sd">20 · 03 · 2027 &nbsp;·&nbsp; Querétaro</p>
+    <button id="enter" type="button">Entrar</button>
+    <p class="sn">Con música</p>
+  </div>
+</div>
+
 <audio id="bgm" src="media/musica.mp3" loop preload="metadata"></audio>
 
 <div class="vhero" id="top">
@@ -815,6 +839,10 @@ bgm.addEventListener('error',()=>{mb.hidden=true});
 bgm.volume=.55;
 const go=()=>{if(started)return;started=true;bgm.play().then(setUI).catch(()=>{started=false})};
 ['pointerdown','keydown'].forEach(ev=>addEventListener(ev,e=>{if(!mb.contains(e.target))go()}));
+const splash=document.getElementById('splash');
+const dismiss=()=>{splash.classList.add('out');document.body.style.overflow='';setTimeout(()=>{splash.hidden=true},900)};
+document.getElementById('enter').addEventListener('click',()=>{started=true;bgm.play().then(setUI).catch(()=>{});dismiss()});
+bgm.play().then(()=>{started=true;setUI()}).catch(()=>{splash.hidden=false;document.body.style.overflow='hidden'});
 mb.onclick=()=>{started=true;bgm.paused?bgm.play().then(setUI):(bgm.pause(),setUI())};
 bgm.addEventListener('play',setUI);bgm.addEventListener('pause',setUI);
 </script>
