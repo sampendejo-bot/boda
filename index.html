@@ -308,9 +308,10 @@ nav.over a{color:var(--ivory)}
 
 
 /* PANTALLA DE BIENVENIDA (activa la música) */
-.splash{position:fixed;inset:0;z-index:100;background:linear-gradient(rgba(30,10,16,.3),rgba(30,10,16,.62)),url('media/bg-splash.jpg') 55% 78%/cover no-repeat,var(--bordeaux);color:var(--ivory);display:grid;place-items:center;text-align:center;padding:24px;transition:opacity .9s ease}
+.splash{position:fixed;inset:0;z-index:100;background:linear-gradient(rgba(30,10,16,.08),rgba(30,10,16,.2) 38%,rgba(30,10,16,.96) 66%),linear-gradient(90deg,var(--bordeaux) 21%,rgba(30,10,16,0) 38%,rgba(30,10,16,0) 62%,var(--bordeaux) 79%),url('media/bg-splash-d.jpg') 50% 0/auto 72% no-repeat,var(--bordeaux);color:var(--ivory);display:grid;place-items:end center;padding-bottom:clamp(36px,9vh,90px)!important;text-align:center;padding:24px;transition:opacity .9s ease}
 .splash[hidden]{display:none}
 .splash.out{opacity:0;pointer-events:none}
+@media(max-width:820px){.splash{background:linear-gradient(rgba(30,10,16,.1) 0,rgba(30,10,16,.2) 45%,rgba(30,10,16,.9) 70%,var(--bordeaux) 82%),url('media/bg-splash.jpg') 50% 0/100% auto no-repeat,var(--bordeaux)}}
 .splash .mono{width:min(92px,24vw);margin:0 auto 26px}
 .splash>div{width:100%;max-width:100%}
 .splash h1{font-weight:400;font-size:clamp(1.4rem,6.2vw,3.6rem);text-transform:uppercase;letter-spacing:.04em;line-height:1.05;display:flex;gap:.18em;justify-content:center;align-items:center;flex-wrap:wrap;white-space:normal}
