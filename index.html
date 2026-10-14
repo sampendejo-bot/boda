@@ -368,6 +368,13 @@ footer{background:#2A211E!important}
 /* dress code en burdeos profundo (distinto al vino de hoteles) */
 .dress,.dpanel{background-color:#2E1319}
 .dpanel{background-image:url('media/bg-dress.jpg')}
+
+/* círculos del dress code: mismo tamaño y mejor contraste */
+.sw i{width:58px!important;height:58px!important;border:1.5px solid rgba(235,227,218,.55)!important;transform:none!important;transition:box-shadow .3s,border-color .3s}
+.sw:hover i{border-color:rgba(235,227,218,.95)!important;box-shadow:0 0 0 3px rgba(235,227,218,.22)!important}
+.sw[aria-expanded="true"] i{border-color:#EBE3DA!important;box-shadow:0 0 0 4px rgba(235,227,218,.38)!important}
+.dsw{align-items:flex-start}
+.sw span{min-height:2.6em;line-height:1.3}
 </style>
 </head>
 <body>
