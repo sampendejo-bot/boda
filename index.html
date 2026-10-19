@@ -24,27 +24,28 @@ html{scroll-behavior:smooth}
 body{background:var(--ivory);color:var(--logo);font-family:var(--serif);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img,video{display:block;max-width:100%}
 a{color:inherit}
-.caps{font-family:var(--sans);font-weight:300;letter-spacing:.38em;text-transform:uppercase;font-size:.72rem}
+:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.caps{font-family:var(--sans);font-weight:300;letter-spacing:.38em;text-transform:uppercase;font-size:.78rem}
 .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
 section{padding:clamp(70px,12vw,140px) 0}
 h2{font-weight:300;font-size:clamp(1.9rem,5.5vw,3.2rem);text-transform:uppercase;letter-spacing:.14em;text-align:center;line-height:1.15}
 h2 em{font-family:var(--script);font-style:normal;text-transform:none;letter-spacing:0;font-size:1.15em}
-.eyebrow{display:block;text-align:center;margin-bottom:18px;opacity:.75}
+.eyebrow{display:block;text-align:center;margin-bottom:18px;opacity:.9}
 .lead{max-width:34em;margin:26px auto 0;text-align:center;font-size:1.15rem;font-style:italic;font-weight:300}
-.btn{display:inline-block;margin-top:26px;padding:14px 32px;border:1px solid currentColor;color:var(--logo);text-decoration:none;font-family:var(--sans);font-weight:300;letter-spacing:.3em;text-transform:uppercase;font-size:.66rem;transition:.25s;background:none;cursor:pointer}
+.btn{display:inline-block;margin-top:26px;padding:14px 32px;border:1px solid currentColor;color:var(--logo);text-decoration:none;font-family:var(--sans);font-weight:300;letter-spacing:.3em;text-transform:uppercase;font-size:.75rem;transition:.25s;background:none;cursor:pointer}
 .btn:hover{background:var(--logo);color:var(--ivory);border-color:var(--logo)}
-.tbd{opacity:.55}
 
 /* NAV */
 nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:center;gap:clamp(12px,3vw,36px);padding:18px 12px;background:linear-gradient(var(--ivory),rgba(235,227,218,0));transition:background .3s}
-nav a{color:var(--logo);text-decoration:none;font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;transition:color .3s;white-space:nowrap}
+nav a{color:var(--logo);text-decoration:none;font-family:var(--sans);font-weight:300;font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;transition:color .3s;white-space:nowrap;padding-bottom:3px;border-bottom:1px solid transparent}
+nav a[aria-current="true"]{border-bottom-color:currentColor}
 nav a:hover{opacity:.55}
 nav.over{background:linear-gradient(rgba(46,19,25,.6),rgba(46,19,25,0))}
 nav.over a{color:var(--ivory)}
-@media(max-width:560px){nav{gap:10px}nav a{font-size:.52rem;letter-spacing:.18em}}
+@media(max-width:560px){nav{gap:2px 14px;flex-wrap:wrap;padding:12px 10px}nav a{font-size:.7rem;letter-spacing:.14em;padding-top:4px}}
 
 /* MÚSICA */
-.music{position:fixed;left:14px;bottom:14px;z-index:30;display:flex;align-items:center;gap:10px;background:rgba(235,227,218,.9);color:var(--logo);border:1px solid rgba(90,20,40,.35);border-radius:40px;padding:9px 16px 9px 12px;cursor:pointer;font-family:var(--sans);font-weight:300;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;backdrop-filter:blur(6px)}
+.music{position:fixed;left:14px;bottom:14px;z-index:30;display:flex;align-items:center;gap:10px;background:rgba(235,227,218,.9);color:var(--logo);border:1px solid rgba(90,20,40,.35);border-radius:40px;padding:9px 16px 9px 12px;cursor:pointer;font-family:var(--sans);font-weight:300;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;backdrop-filter:blur(6px)}
 .music .ico{font-size:1rem;line-height:1}
 .music.on .ico{animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.4}}
@@ -67,7 +68,9 @@ nav.over a{color:var(--ivory)}
 .hero h1 .y{font-family:var(--script);text-transform:none;font-size:.9em;margin:0 .05em;transform:translateY(.12em)}
 .hero .caps{margin-bottom:26px}
 .date{font-family:var(--sans);font-weight:300;letter-spacing:.18em;font-size:clamp(.95rem,2.6vw,1.3rem);margin-top:30px}
-.hero .where{margin-top:10px}
+.hero .where{margin-top:10px;line-height:2}
+.hero .btn{color:var(--ivory);margin-top:34px}
+.hero .btn:hover{background:var(--ivory);color:var(--bordeaux);border-color:var(--ivory)}
 @media(max-width:700px){
   .hero{padding-bottom:clamp(36px,7svh,70px)}
   .hero::before{inset:clamp(36px,5svh,56px) 0 0 0;height:auto;background-size:auto 112%;background-position:57% 4%;-webkit-mask-image:linear-gradient(transparent,#000 14%);mask-image:linear-gradient(transparent,#000 14%)}
@@ -142,11 +145,11 @@ nav.over a{color:var(--ivory)}
 .way.wide h4{font-size:1.6rem}
 .way b{font-weight:500}
 .way{background:var(--ivory);padding:28px 26px;border:1px solid rgba(90,20,40,.2)}
-.way .caps{display:block;opacity:.7;margin-bottom:8px;font-size:.6rem}
+.way .caps{display:block;opacity:.85;margin-bottom:8px;font-size:.72rem}
 .way h4{font-weight:400;font-size:1.4rem;letter-spacing:.03em;line-height:1.2}
 .way p{margin-top:12px;font-size:1.05rem}
 .way ul{margin:10px 0 0 1.1em;font-size:1.02rem}
-.way a.l{display:inline-block;margin-top:14px;font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;margin-right:16px}
+.way a.l{display:inline-block;margin-top:4px;font-family:var(--sans);font-weight:300;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;margin-right:18px;padding:10px 0 6px}
 @media(max-width:860px){.ways,.ways.three{grid-template-columns:1fr}}
 
 
@@ -159,8 +162,8 @@ nav.over a{color:var(--ivory)}
 .hpanel{background:var(--wine);color:var(--ivory);padding:clamp(36px,6vw,90px) clamp(24px,5vw,80px);display:flex;flex-direction:column;justify-content:center}
 .hpanel>.caps{opacity:.85}
 .htabs{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:22px}
-.htabs button{background:none;border:0;border-bottom:1px solid transparent;color:var(--ivory);opacity:.5;font-family:var(--sans);font-weight:300;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;padding:6px 0;cursor:pointer;transition:.25s}
-.htabs button:hover{opacity:.85}
+.htabs button{background:none;border:0;border-bottom:1px solid transparent;color:var(--ivory);opacity:.72;font-family:var(--sans);font-weight:300;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;padding:10px 0;cursor:pointer;transition:.25s}
+.htabs button:hover{opacity:1}
 .htabs button[aria-selected="true"]{opacity:1;border-bottom-color:var(--ivory)}
 .hpanel h3{font-weight:300;font-size:clamp(2.2rem,5vw,3.8rem);text-transform:uppercase;letter-spacing:.06em;line-height:1.05;margin-top:34px}
 .hpanel h3 em{font-family:var(--script);font-style:normal;text-transform:none;letter-spacing:0;font-size:1.1em}
@@ -168,11 +171,11 @@ nav.over a{color:var(--ivory)}
 .hpanel p#hDesc{font-size:1.2rem;font-weight:300;max-width:24em;opacity:.92}
 .hmeta{margin-top:26px}
 .hmeta b{font-weight:400;font-size:2.4rem;font-family:var(--serif);display:block;line-height:1}
-.hmeta span{font-style:italic;opacity:.8;font-size:1.05rem}
+.hmeta span{font-style:italic;opacity:.9;font-size:1.05rem}
 .hbtns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.hbtn{display:inline-block;padding:13px 28px;border:1px solid var(--ivory);color:var(--ivory);text-decoration:none;font-family:var(--sans);font-weight:300;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;transition:.25s}
+.hbtn{display:inline-block;padding:13px 28px;border:1px solid var(--ivory);color:var(--ivory);text-decoration:none;font-family:var(--sans);font-weight:300;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;transition:.25s}
 .hbtn:hover{background:var(--ivory);color:var(--wine)}
-.hnote{margin-top:26px;font-size:.88rem;font-style:italic;opacity:.6}
+.hnote{margin-top:26px;font-size:.88rem;font-style:italic;opacity:.8}
 .hpanel #hName,.hpanel #hDesc,.hpanel .hmeta{transition:opacity .35s}
 .hpanel.swap #hName,.hpanel.swap #hDesc,.hpanel.swap .hmeta{opacity:0}
 @media(max-width:820px){.hsplit{grid-template-columns:1fr;min-height:0}.hmap{height:340px}}
@@ -181,59 +184,34 @@ nav.over a{color:var(--ivory)}
 .hmap[data-mode="photo"] .hmaplink{display:none}
 .hmaplink{position:absolute;inset:0;display:block}
 .hmode{position:absolute;left:16px;bottom:16px;z-index:5;display:flex;background:rgba(46,19,25,.82);border:1px solid rgba(235,227,218,.4)}
-.hmode button{background:none;border:0;color:var(--ivory);font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;padding:11px 18px;cursor:pointer;opacity:.6;transition:.25s}
+.hmode button{background:none;border:0;color:var(--ivory);font-family:var(--sans);font-weight:300;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;padding:13px 18px;cursor:pointer;opacity:.85;transition:.25s}
 .hmode button[aria-selected="true"]{background:var(--ivory);color:var(--bordeaux);opacity:1}
 .hphotos{position:absolute;inset:0}
 .hphotos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
 .hphotos img.on{opacity:1}
 .hmap::after{display:none}
 
-/* PROGRAMA */
-.timeline{max-width:560px;margin:56px auto 0}
-.item{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:26px 0;border-top:1px solid rgba(90,20,40,.25);align-items:baseline}
-.item:last-child{border-bottom:1px solid rgba(90,20,40,.25)}
-.item .t{font-family:var(--sans);font-weight:300;letter-spacing:.2em;font-size:.95rem}
-.item h3{font-weight:400;font-size:1.45rem;letter-spacing:.06em;text-transform:uppercase}
-.item p{font-size:1rem;opacity:.8;font-style:italic}
-
-
-/* PROGRAMA (carrusel vertical) */
+/* PROGRAMA (línea de tiempo; la foto sigue a la hora que se lee) */
 .prog{padding:0;background:var(--ivory)}
 .psplit{display:grid;grid-template-columns:1.25fr 1fr;min-height:640px}
 .pleft{background:var(--ivory);color:var(--logo);padding:clamp(40px,6vw,90px) clamp(24px,5vw,80px);display:flex;flex-direction:column;justify-content:center}
-.pey{opacity:.75}
+.pey{opacity:.9}
 .ptitle{font-weight:300;font-size:clamp(2.2rem,5vw,3.8rem);text-transform:uppercase;letter-spacing:.06em;line-height:1.05;margin-top:14px}
 .ptitle em{font-family:var(--script);font-style:normal;text-transform:none;letter-spacing:0;font-size:1.1em}
 .pline{background:var(--logo)!important;margin:20px 0}
 .plead{font-size:1.2rem;font-style:italic;font-weight:300;opacity:.9}
 .pnote{margin-top:8px;opacity:1;font-weight:400}
-.pbody{display:flex;align-items:center;gap:clamp(14px,3vw,36px);margin-top:30px}
-.pwin{flex:1;height:290px;overflow:hidden;border-top:1px solid rgba(90,20,40,.3);border-bottom:1px solid rgba(90,20,40,.3)}
-.ptrack{transition:transform .9s cubic-bezier(.65,0,.35,1);will-change:transform}
-.pslide{height:290px;display:flex;flex-direction:column;justify-content:center}
-.pslide .ptime{font-family:var(--serif);font-weight:300;font-size:clamp(3.4rem,8vw,6rem);line-height:1;letter-spacing:.02em}
-.pslide .ptime small{font-family:var(--sans);font-size:.3em;letter-spacing:.3em}
-.pslide h4{margin-top:10px;font-family:var(--script);font-weight:400;font-size:clamp(2.2rem,4.6vw,3.2rem);letter-spacing:0;text-transform:none;line-height:1.1}
-.pslide p{margin-top:8px;font-style:italic;font-size:1.1rem;opacity:.85}
-.pslide.tbd .ptime{opacity:.45}
-.pctrl{display:flex;flex-direction:column;gap:14px}
-.pctrl button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(90,20,40,.55);background:none;color:var(--logo);display:grid;place-items:center;cursor:pointer;transition:background .25s,color .25s,transform .25s}
-.pctrl button:hover{background:var(--logo);color:var(--ivory)}
-.pctrl button:active{transform:scale(.94)}
+.ptl{list-style:none;margin-top:34px;border-top:1px solid rgba(90,20,40,.3)}
+.prow{display:grid;grid-template-columns:minmax(7.4rem,.42fr) 1fr;gap:clamp(14px,3vw,30px);align-items:center;padding:clamp(18px,3vw,28px) 0;border-bottom:1px solid rgba(90,20,40,.3);opacity:.78;transition:opacity .5s}
+.prow.on{opacity:1}
+.prow .ptime{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,5.5vw,3.6rem);line-height:1;letter-spacing:.02em;white-space:nowrap}
+.prow .ptime small{font-family:var(--sans);font-size:max(.3em,12px);letter-spacing:.3em}
+.prow h4{font-family:var(--script);font-weight:400;font-size:clamp(2rem,4.2vw,2.8rem);letter-spacing:0;text-transform:none;line-height:1.1}
+.prow p{margin-top:4px;font-style:italic;font-size:1.1rem}
 .pphotos{position:relative;min-height:420px;overflow:hidden;background:var(--ivory-2)}
 .pphotos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;opacity:0;transform:scale(1.06);transition:opacity 1s ease,transform 5s ease}
 .pphotos img.on{opacity:1;transform:scale(1)}
-.pright{background:var(--ivory-2);color:var(--logo);padding:clamp(40px,6vw,90px) clamp(24px,5vw,80px);display:flex;flex-direction:column;justify-content:center}
-.pdate{font-family:var(--sans);font-weight:300;letter-spacing:.3em;font-size:.8rem;opacity:.7;margin-bottom:26px}
-.pidx{display:flex;flex-direction:column}
-.pit{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:baseline;padding:20px 0;border-top:1px solid rgba(90,20,40,.25);background:none;border-left:0;border-right:0;border-bottom:0;color:inherit;text-align:left;cursor:pointer;opacity:.5;transition:opacity .4s;font:inherit}
-.pit:last-child{border-bottom:1px solid rgba(90,20,40,.25)}
-.pit .t{font-family:var(--sans);font-weight:300;letter-spacing:.16em;font-size:.82rem}
-.pit .n{font-size:1.35rem;letter-spacing:.06em;text-transform:uppercase}
-.pit:hover{opacity:.85}
-.pit.on{opacity:1}
-.pit.on .n::after{content:"";display:inline-block;width:34px;height:1px;background:var(--logo);margin-left:14px;vertical-align:middle}
-@media(max-width:820px){.psplit{grid-template-columns:1fr;min-height:0}.pwin,.pslide{height:250px}.pphotos{min-height:380px}}
+@media(max-width:820px){.psplit{grid-template-columns:1fr;min-height:0}.pphotos{min-height:380px}}
 
 /* VESTIMENTA */
 .dress{background:var(--wine);color:var(--ivory);padding:0}
@@ -253,7 +231,7 @@ nav.over a{color:var(--ivory)}
 .sw i{display:block;width:58px;height:58px;border-radius:50%;margin:0 auto;border:1px solid rgba(235,227,218,.4);transition:transform .35s,box-shadow .35s}
 .sw:hover i,.sw[aria-expanded="true"] i{transform:scale(1.14);box-shadow:0 0 0 4px rgba(235,227,218,.25)}
 .sw span{display:block;margin-top:12px;font-family:var(--sans);font-weight:300;font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
-.hint{font-family:var(--sans);font-weight:300;font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;opacity:.55;margin-top:22px}
+.hint{font-family:var(--sans);font-weight:300;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;opacity:.8;margin-top:22px}
 @media(max-width:820px){.dsplit{grid-template-columns:1fr;min-height:0}.dgal figure{min-height:0;height:420px}.dsw{justify-content:center}.dpanel{text-align:center;align-items:center}.dsub{margin-left:auto;margin-right:auto}}
 @media(max-width:480px){.dgal{gap:2px}.dgal figure{height:340px}}
 
@@ -268,10 +246,10 @@ nav.over a{color:var(--ivory)}
 .rm-card{position:relative;width:min(520px,100%);background:var(--ivory);color:var(--logo);padding:clamp(28px,5vw,46px);max-height:calc(100svh - 32px);overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.45)}
 .rm-x{position:absolute;top:10px;right:14px;background:none;border:0;font-size:2rem;line-height:1;color:var(--logo);cursor:pointer;opacity:.7}
 .rm-x:hover{opacity:1}
-.rm-eyebrow{display:block;opacity:.7;font-size:.6rem}
+.rm-eyebrow{display:block;opacity:.85;font-size:.72rem}
 .rm-card h3{font-weight:300;font-size:clamp(1.7rem,5vw,2.3rem);text-transform:uppercase;letter-spacing:.08em;line-height:1.1;margin:10px 0 22px}
 .rm-card h3 em{font-family:var(--script);font-style:normal;text-transform:none;letter-spacing:0;font-size:1.1em}
-.rm-card label,.rm-card legend{display:block;font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;margin:18px 0 6px;padding:0}
+.rm-card label,.rm-card legend{display:block;font-family:var(--sans);font-weight:300;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin:18px 0 6px;padding:0}
 .rm-card fieldset{border:0;padding:0;margin:0}
 .rm-card input[type=text],.rm-card input[type=tel],.rm-card textarea{width:100%;font:inherit;font-size:1.1rem;color:var(--logo);background:transparent;border:0;border-bottom:1px solid rgba(90,20,40,.45);padding:6px 0;border-radius:0;resize:vertical}
 .rm-card input:focus,.rm-card textarea:focus{outline:0;border-bottom-color:var(--logo);box-shadow:0 1px 0 var(--logo)}
@@ -281,7 +259,7 @@ nav.over a{color:var(--ivory)}
 .rm-opts input:checked+label{background:var(--logo);color:var(--ivory);border-color:var(--logo)}
 .rm-opts input:focus-visible+label{outline:2px solid var(--logo);outline-offset:2px}
 .rm-err{margin-top:16px;color:#8a1c1c;font-style:italic}
-.rm-send{margin-top:24px;width:100%;padding:16px;border:1px solid var(--logo);background:var(--logo);color:var(--ivory);font-family:var(--sans);font-weight:300;letter-spacing:.3em;text-transform:uppercase;font-size:.68rem;cursor:pointer;transition:.25s}
+.rm-send{margin-top:24px;width:100%;padding:16px;border:1px solid var(--logo);background:var(--logo);color:var(--ivory);font-family:var(--sans);font-weight:300;letter-spacing:.3em;text-transform:uppercase;font-size:.75rem;cursor:pointer;transition:.25s}
 .rm-send:hover{background:transparent;color:var(--logo)}
 .rm-send:disabled{opacity:.5;cursor:default}
 .rm-done{text-align:center;padding:10px 0}
@@ -313,8 +291,8 @@ nav.over a{color:var(--ivory)}
 .splash.out{opacity:0;pointer-events:none}
 .splash .mono{width:min(92px,24vw);margin:0 auto 26px}
 .splash>div{width:100%;max-width:100%}
-.splash h1{font-weight:400;font-size:clamp(1.4rem,6.2vw,3.6rem);text-transform:uppercase;letter-spacing:.04em;line-height:1.05;display:flex;gap:.18em;justify-content:center;align-items:center;flex-wrap:wrap;white-space:normal}
-.splash h1 .y{font-family:var(--script);text-transform:none;font-size:.9em}
+.splash .sh{font-weight:400;font-size:clamp(1.4rem,6.2vw,3.6rem);text-transform:uppercase;letter-spacing:.04em;line-height:1.05;display:flex;gap:.18em;justify-content:center;align-items:center;flex-wrap:wrap;white-space:normal}
+.splash .sh .y{font-family:var(--script);text-transform:none;font-size:.9em}
 .splash .sd{font-family:var(--sans);font-weight:300;letter-spacing:.3em;font-size:.74rem;text-transform:uppercase;margin-top:22px;opacity:.85}
 .splash button{margin-top:38px;padding:16px 44px;border:1px solid var(--ivory);background:none;color:var(--ivory);font-family:var(--sans);font-weight:300;letter-spacing:.34em;text-transform:uppercase;font-size:.7rem;cursor:pointer;transition:.25s}
 .splash button:hover{background:var(--ivory);color:var(--bordeaux)}
@@ -323,8 +301,11 @@ nav.over a{color:var(--ivory)}
 .dsub.dstatic{min-height:0;font-size:1.1rem;font-style:italic;opacity:.92;margin-top:22px}
 .dsub.dlast{margin-top:22px;min-height:0}
 /* RSVP */
+.rsvp-help{margin-top:22px;font-size:1.1rem;font-style:italic;font-weight:300;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.rsvp-help a{text-underline-offset:.2em}
+.tip.back{margin-top:34px}
 .rsvp-note{max-width:30em;margin:30px auto 0;padding-top:26px;border-top:1px solid rgba(235,227,218,.4)}
-.rsvp-note .caps{display:block;opacity:.9;font-size:.64rem}
+.rsvp-note .caps{display:block;opacity:.95;font-size:.75rem}
 .rsvp-note .nokids{font-size:1.35rem;font-style:normal;font-weight:400}
 .rsvp-note .nokids b{font-weight:600}
 .rsvp-note p{margin-top:10px;font-size:1.15rem;font-style:italic;font-weight:300;line-height:1.5;text-shadow:0 2px 24px rgba(0,0,0,.4)}
@@ -339,11 +320,11 @@ nav.over a{color:var(--ivory)}
 
 footer{background:var(--espresso);color:var(--ivory);text-align:center;padding:60px 16px 90px}
 footer .mono{opacity:.85;width:70px;margin:0 auto 22px}
-footer p{opacity:.7}
+footer p{opacity:.85}
 
 .fade{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s ease}
 .fade.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.pphotos img{transition:opacity .01s;transform:none}}
 
 /* === AJUSTES 13-oct: Cómo llegar con flores, dress code, regalo, hashtag === */
 .dnote{margin-top:26px;max-width:26em;font-size:1.02rem;font-style:italic;font-weight:300;line-height:1.55;opacity:.85}
@@ -351,7 +332,7 @@ footer p{opacity:.7}
 .regalo{text-align:center}
 .regalo .wrap{max-width:720px}
 .hashtag{display:block;font-family:var(--serif);font-style:normal;font-weight:400;font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:.14em;line-height:1.2;margin:10px 0 18px}
-footer .hh{opacity:.8;font-size:.62rem}
+footer .hh{opacity:.9;font-size:.72rem}
 @media(max-width:820px){.dnote{margin-left:auto;margin-right:auto}}
 
 /* === VERDE OLIVA (paleta nueva de Fanny) === */
@@ -370,7 +351,7 @@ footer{background:#2A211E!important}
 .dpanel{background-image:url('media/bg-dress.jpg?v=202610141413')}
 
 /* círculos del dress code: mismo tamaño y mejor contraste */
-.sw i{width:58px!important;height:58px!important;border:1.5px solid rgba(235,227,218,.55)!important;transform:none!important;transition:box-shadow .3s,border-color .3s}
+.sw i{width:58px!important;height:58px!important;border:1.5px solid rgba(235,227,218,.75)!important;transform:none!important;transition:box-shadow .3s,border-color .3s}
 .sw:hover i{border-color:rgba(235,227,218,.95)!important;box-shadow:0 0 0 3px rgba(235,227,218,.22)!important}
 .sw[aria-expanded="true"] i{border-color:#EBE3DA!important;box-shadow:0 0 0 4px rgba(235,227,218,.38)!important}
 .dsw{align-items:flex-start}
@@ -383,6 +364,7 @@ footer{background:#2A211E!important}
   <a href="#lugar">El lugar</a>
   <a href="#viaje">Viaje</a>
   <a href="#hoteles">Hoteles</a>
+  <a href="#programa">Programa</a>
   <a href="#vestimenta">Vestimenta</a>
   <a href="#regalo">Regalo</a>
   <a href="#rsvp">Confirmar</a>
@@ -392,7 +374,7 @@ footer{background:#2A211E!important}
 <div class="splash" id="splash" hidden>
   <div>
     <img class="mono" src="media/monograma-marfil.png?v=202610141413" alt="">
-    <h1><span>Caro</span><span class="y">y</span><span>Juanfe</span></h1>
+    <p class="sh"><span>Caro</span><span class="y">y</span><span>Juanfe</span></p>
     <p class="sd">20 · 03 · 2027 &nbsp;·&nbsp; Querétaro</p>
     <button id="enter" type="button">Entrar</button>
   </div>
@@ -401,7 +383,7 @@ footer{background:#2A211E!important}
 <audio id="bgm" src="media/musica.mp3?v=202610151446" loop preload="auto"></audio>
 
 <div class="vhero" id="top">
-  <video id="v" src="media/invitacion.mp4?v=202610141413" poster="media/poster.jpg?v=202610141413" autoplay playsinline muted loop></video>
+  <video id="v" aria-hidden="true" tabindex="-1" src="media/invitacion.mp4?v=202610141413" poster="media/poster.jpg?v=202610141413" autoplay playsinline muted loop></video>
   <div class="cap">
     <span class="caps">20 · 03 · 2027 &nbsp;·&nbsp; Querétaro, Qro.</span>
     <span class="scroll"></span>
@@ -414,13 +396,14 @@ footer{background:#2A211E!important}
     <p class="caps">La boda de</p>
     <h1><span>Caro</span><span class="y">y</span><span>Juanfe</span></h1>
     <p class="date">Sábado, 20 de marzo del 2027</p>
-    <p class="caps where">Querétaro, Qro.</p>
+    <p class="caps where">Ceremonia 5:00 PM<br>Hacienda La Bartola · Querétaro, Qro.</p>
+    <button class="btn" type="button" data-rsvp>Confirmar asistencia</button>
   </div>
 </header>
 
 
 <section id="lugar">
-  <figure class="banner"><video id="bv" src="media/bartola-web.mp4?v=202610141413" poster="media/bartola-poster.jpg?v=202610141413" autoplay muted loop playsinline></video>
+  <figure class="banner"><video id="bv" aria-hidden="true" tabindex="-1" src="media/bartola-web.mp4?v=202610141413" poster="media/bartola-poster.jpg?v=202610141413" autoplay muted loop playsinline></video>
     <figcaption class="over-txt fade">
       <span class="caps eyebrow">El lugar</span>
       <h2>Hacienda <em>La Bartola</em></h2>
@@ -455,6 +438,7 @@ footer{background:#2A211E!important}
       <span class="caps">Les recomendamos</span>
       <p>Llegar a Querétaro el <b>viernes 19 de marzo</b>, un día antes de la boda. Así descansan, se instalan y llegan sin prisa.</p>
     </div>
+    <p class="note">Será una noche solo para adultos.</p>
 
     <h3 class="sub-h">Cómo llegar a Querétaro</h3>
     <div class="ways">
@@ -525,6 +509,12 @@ footer{background:#2A211E!important}
       </div>
     </div>
 
+    <!-- CÓMO VOLVER: oculto hasta definirlo. Escribe el texto dentro del <p> y quita el atributo hidden. -->
+    <div class="tip back" id="comoVolver" hidden>
+      <span class="caps">Cómo volver</span>
+      <p></p>
+    </div>
+
     </div>
 
 <div class="hsplit" id="hoteles">
@@ -551,23 +541,24 @@ footer{background:#2A211E!important}
       <img src="media/hotel-hercules.jpg?v=202610141413" alt="Hotel Hércules">
       <img src="media/hotel-aloft.jpg?v=202610141413" alt="Aloft Querétaro">
     </div>
-    <div class="hmode" role="tablist">
-      <button type="button" id="hmPhoto" aria-selected="true">Foto</button>
-      <button type="button" id="hmMap" aria-selected="false">Mapa</button>
+    <div class="hmode" role="tablist" aria-label="Foto o mapa">
+      <button type="button" role="tab" id="hmPhoto" aria-selected="true">Foto</button>
+      <button type="button" role="tab" id="hmMap" aria-selected="false">Mapa</button>
     </div>
   </div>
   <div class="hpanel">
     <span class="caps">Dónde quedarse</span>
-    <div class="htabs" id="htabs" role="tablist">
-      <button role="tab" aria-selected="true" data-i="0">Criol</button>
-      <button role="tab" aria-selected="false" data-i="1">Patio Santiago</button>
-      <button role="tab" aria-selected="false" data-i="2">Casona</button>
-      <button role="tab" aria-selected="false" data-i="3">Casa Santiago</button>
-      <button role="tab" aria-selected="false" data-i="4">Atrio</button>
-      <button role="tab" aria-selected="false" data-i="5">Casa Postal</button>
-      <button role="tab" aria-selected="false" data-i="6">Hércules</button>
-      <button role="tab" aria-selected="false" data-i="7">Aloft</button>
+    <div class="htabs" id="htabs" role="tablist" aria-label="Hoteles">
+      <button role="tab" aria-selected="true" aria-controls="hPanelBody" data-i="0">Criol</button>
+      <button role="tab" aria-selected="false" aria-controls="hPanelBody" data-i="1">Patio Santiago</button>
+      <button role="tab" aria-selected="false" aria-controls="hPanelBody" data-i="2">Casona</button>
+      <button role="tab" aria-selected="false" aria-controls="hPanelBody" data-i="3">Casa Santiago</button>
+      <button role="tab" aria-selected="false" aria-controls="hPanelBody" data-i="4">Atrio</button>
+      <button role="tab" aria-selected="false" aria-controls="hPanelBody" data-i="5">Casa Postal</button>
+      <button role="tab" aria-selected="false" aria-controls="hPanelBody" data-i="6">Hércules</button>
+      <button role="tab" aria-selected="false" aria-controls="hPanelBody" data-i="7">Aloft</button>
     </div>
+    <div role="tabpanel" id="hPanelBody" aria-live="polite">
     <h3 id="hName">Hotel <em>Criol</em></h3>
     <div class="hline"></div>
     <p id="hDesc">Hotel boutique contemporáneo en el Centro Histórico, a unos 200 metros de la Plaza de Armas.</p>
@@ -577,6 +568,7 @@ footer{background:#2A211E!important}
       <a class="hbtn" id="hRoute" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Criol+Rio+de+la+Loza+Norte+6+Queretaro&destination=Hacienda+La+Bartola+Tlacote+el+Bajo+Queretaro">Abrir ruta</a>
     </div>
     <p class="hnote">Distancias y tiempos aproximados; el mapa calcula la ruta exacta.</p>
+    </div>
   </div>
 </div>
 </section>
@@ -587,21 +579,13 @@ footer{background:#2A211E!important}
       <span class="caps pey">20 de marzo</span>
       <h3 class="ptitle">Programa</h3>
       <div class="hline pline"></div>
-      <p class="plead">Todo el día en Hacienda La Bartola.</p>
-      <p class="plead pnote">Empezaremos puntuales. Recuerda llegar con anticipación.</p>
-      <div class="pbody">
-        <div class="pwin" id="pwin">
-          <div class="ptrack" id="ptrack">
-            <article class="pslide" data-time="5:00 PM" data-name="Ceremonia"><div class="ptime">5:00 <small>PM</small></div><h4>Ceremonia</h4><p>Hacienda La Bartola.</p></article>
-            <article class="pslide" data-time="6:00 PM" data-name="Recepción"><div class="ptime">6:00 <small>PM</small></div><h4>Recepción</h4><p>Hacienda La Bartola.</p></article>
-            <article class="pslide" data-time="7:30 PM" data-name="Cena y fiesta"><div class="ptime">7:30 <small>PM</small></div><h4>Cena y fiesta</h4><p>Hacienda La Bartola · hasta las 4:00 AM.</p></article>
-          </div>
-        </div>
-        <div class="pctrl">
-          <button id="pup" aria-label="Anterior"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 15 8-8 8 8"/></svg></button>
-          <button id="pdown" aria-label="Siguiente"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 9 8 8 8-8"/></svg></button>
-        </div>
-      </div>
+      <p class="plead">Toda la celebración en Hacienda La Bartola.</p>
+      <p class="plead pnote">Empezaremos puntuales. Lleguen con anticipación.</p>
+      <ol class="ptl" id="ptl">
+        <li class="prow on"><span class="ptime">5:00 <small>PM</small></span><div><h4>Ceremonia</h4><p>Hacienda La Bartola.</p></div></li>
+        <li class="prow"><span class="ptime">6:00 <small>PM</small></span><div><h4>Recepción</h4><p>Hacienda La Bartola.</p></div></li>
+        <li class="prow"><span class="ptime">7:30 <small>PM</small></span><div><h4>Cena y fiesta</h4><p>Hacienda La Bartola · hasta las 4:00 AM.</p></div></li>
+      </ol>
     </div>
     <div class="pphotos" id="pphotos" aria-hidden="true">
       <img src="media/hist-caminan.jpg?v=202610141413" alt="" class="on">
@@ -621,16 +605,16 @@ footer{background:#2A211E!important}
     <div class="dpanel">
       <h3>Dress <em>code</em></h3>
       <div class="hline"></div>
-      <p class="dlead">Únete a nosotros en una noche muy especial, entre cactus, piedra y agua, frente al paisaje mexicano de Querétaro. Los días son cálidos y las noches, frescas.</p>
-      <div class="htabs" id="dtabs" role="tablist">
+      <p class="dlead">Únanse a nosotros en una noche muy especial, entre cactus, piedra y agua, frente al paisaje mexicano de Querétaro. Los días son cálidos y las noches, frescas.</p>
+      <div class="htabs" id="dtabs" role="tablist" aria-label="Vestimenta">
         <button role="tab" aria-selected="true" data-g="w">Ellas</button>
         <button role="tab" aria-selected="false" data-g="m">Ellos</button>
       </div>
-      <p class="dsub dstatic">No olvides que nuestra paleta de colores abraza la belleza de Querétaro y de La Bartola: el chocolate de la tierra, el verde oliva de los cactus, la ciruela y el vino al caer la tarde.</p>
+      <p class="dsub dstatic">No olviden que nuestra paleta de colores abraza la belleza de Querétaro y de La Bartola: el chocolate de la tierra, el verde oliva de los cactus, la ciruela y el vino al caer la tarde.</p>
       <div class="dsw" id="dsw"></div>
-      <p class="hint" id="dhint">Pasa el cursor o toca un color</p>
+      <p class="hint" id="dhint">Pasen el cursor o toquen un color</p>
       <p class="dsub dlast" id="dsub">Vestidos largos de noche, en telas fluidas y colores sólidos de nuestra paleta.</p>
-      <p class="dnote">¡Prepárate para una noche inolvidable, donde el estilo se fusiona con el paisaje!</p>
+      <p class="dnote">¡Prepárense para una noche inolvidable, donde el estilo se fusiona con el paisaje!</p>
     </div>
   </div>
 </section>
@@ -652,13 +636,15 @@ footer{background:#2A211E!important}
   <div class="wrap fade">
     <span class="caps eyebrow">Los esperamos</span>
     <h2>Confirma tu <em>asistencia</em></h2>
-    <p class="lead">Cuéntanos si nos acompañas. Fecha límite por definir.</p>
+    <p class="lead">Cuéntanos si nos acompañas.<span id="rsvpDeadline" hidden> Fecha límite: <b id="rsvpDeadlineT"></b>.</span></p>
     <div class="rsvp-note">
       <span class="caps">Invitación personal e intransferible</span>
       <p class="nokids">Amamos a los más chiquitos, pero <b>los niños no están invitados</b> a esta celebración: es una noche solo para adultos.</p>
       <p>Vamos a disfrutar todos sin preocupaciones.</p>
     </div>
-    <button class="btn" id="rsvpOpen" type="button">Confirmar</button>
+    <button class="btn" id="rsvpOpen" type="button" data-rsvp>Confirmar</button>
+    <!-- Contacto: llena RSVP.contacto en el script y aparece aquí -->
+    <p class="rsvp-help" id="rsvpHelp" hidden>¿Dudas? Escríbannos: <a id="rsvpHelpLink" target="_blank" rel="noopener"></a></p>
   </div>
 </section>
 
@@ -677,7 +663,7 @@ footer{background:#2A211E!important}
       <h3 id="rsvpTitle">Confirma tu <em>asistencia</em></h3>
 
       <label for="rName">Tu nombre completo</label>
-      <input id="rName" name="nombre" type="text" autocomplete="name" required>
+      <input id="rName" name="nombre" type="text" autocomplete="name" maxlength="80" required>
 
       <fieldset>
         <legend>¿Nos acompañas?</legend>
@@ -689,16 +675,16 @@ footer{background:#2A211E!important}
 
       <div id="rExtra" hidden>
         <label for="rComp">Acompañantes (nombres)</label>
-        <textarea id="rComp" name="acompanantes" rows="2" placeholder="Solo si tu invitación lo incluye"></textarea>
+        <textarea id="rComp" name="acompanantes" rows="2" maxlength="200" placeholder="Solo si tu invitación lo incluye"></textarea>
         <label for="rDiet">Alergias o restricciones de comida</label>
-        <input id="rDiet" name="restricciones" type="text">
+        <input id="rDiet" name="restricciones" type="text" maxlength="150">
       </div>
 
       <label for="rTel">Tu WhatsApp (opcional)</label>
-      <input id="rTel" name="telefono" type="tel" autocomplete="tel">
+      <input id="rTel" name="telefono" type="tel" autocomplete="tel" maxlength="25">
 
       <label for="rMsg">Un mensaje para nosotros (opcional)</label>
-      <textarea id="rMsg" name="mensaje" rows="2"></textarea>
+      <textarea id="rMsg" name="mensaje" rows="2" maxlength="500"></textarea>
 
       <p class="rm-err" id="rErr" role="alert" hidden></p>
       <button class="rm-send" id="rSend" type="submit">Enviar confirmación</button>
@@ -719,12 +705,18 @@ document.querySelectorAll('.fade').forEach(el=>io.observe(el));
 
 // videos: solo reproducen cuando se ven
 [['v',.2],['bv',.2]].forEach(([id,t])=>{const el=document.getElementById(id);
-  new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?el.play().catch(()=>{}):el.pause()),{threshold:t}).observe(el)});
+  new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&!el.dataset.still?el.play().catch(()=>{}):el.pause()),{threshold:t}).observe(el)});
+
+// quien prefiere menos movimiento: videos quietos en su póster
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){['v','bv'].forEach(id=>{const el=document.getElementById(id);el.removeAttribute('autoplay');el.pause();el.dataset.still='1'})}
 
 // menú claro sobre secciones oscuras
 const nav=document.getElementById('nav');
 const dark=[...document.querySelectorAll('.vhero,#inicio,.banner,.dress,.rsvp,footer')];
-const navTick=()=>{const y=28;nav.classList.toggle('over',dark.some(e=>{const r=e.getBoundingClientRect();return r.top<=y&&r.bottom>=y}))};
+const navLinks=[...nav.querySelectorAll('a')].map(a=>[a,document.querySelector(a.getAttribute('href'))]);
+const navTick=()=>{const y=28;nav.classList.toggle('over',dark.some(e=>{const r=e.getBoundingClientRect();return r.top<=y&&r.bottom>=y}));
+  let cur=null;navLinks.forEach(([a,t])=>{if(t&&t.getBoundingClientRect().top<=innerHeight*.4)cur=a});
+  navLinks.forEach(([a])=>a.setAttribute('aria-current',a===cur?'true':'false'))};
 addEventListener('scroll',navTick,{passive:true});navTick();
 
 // hoteles -> mapa y panel
@@ -756,40 +748,27 @@ document.querySelectorAll('#htabs button').forEach(b=>b.addEventListener('click'
   const set=m=>{hm.dataset.mode=m;a.setAttribute('aria-selected',m==='map');b.setAttribute('aria-selected',m==='photo')};
   a.onclick=()=>set('map');b.onclick=()=>set('photo')})();
 
-// programa: carrusel vertical (suben y bajan los compromisos)
-(()=>{const tr=document.getElementById('ptrack'),win=document.getElementById('pwin'),idx=document.getElementById('pidx')||document.createElement('div');
-  if(!tr)return;
-  const slides=[...tr.children],n=slides.length;
-  tr.appendChild(slides[0].cloneNode(true));            // clon para el bucle
-  let i=0,busy=false,paused=false,visible=false,timer=null;
-  const ph=[...document.querySelectorAll('#pphotos img')];let pc=0;
-  const photo=()=>ph.forEach((m,j)=>m.classList.toggle('on',j===((pc%ph.length)+ph.length)%ph.length));
-  const h=()=>win.getBoundingClientRect().height;
-  idx.innerHTML=slides.map((sl,k)=>'<button class="pit" data-k="'+k+'"><span class="t">'+sl.dataset.time+'</span><span class="n">'+sl.dataset.name+'</span></button>').join('');
-  const mark=()=>idx.querySelectorAll('.pit').forEach((b,k)=>b.classList.toggle('on',k===(i%n)));
-  const go=(to)=>{tr.style.transform='translateY('+(-to*h())+'px)'};
-  const next=()=>{if(busy)return;busy=true;i++;pc++;go(i);mark();photo();
-    setTimeout(()=>{if(i>=n){tr.style.transition='none';i=0;go(0);void tr.offsetWidth;tr.style.transition=''}busy=false},960)};
-  const prev=()=>{if(busy)return;busy=true;
-    if(i===0){tr.style.transition='none';i=n;go(n);void tr.offsetWidth;tr.style.transition=''}
-    i--;pc--;go(i);mark();photo();setTimeout(()=>{busy=false},960)};
-  const jump=k=>{if(busy)return;busy=true;pc+=k-(i%n);i=k;go(i);mark();photo();setTimeout(()=>{busy=false},960)};
-  const restart=()=>{clearInterval(timer);timer=setInterval(()=>{if(!paused&&visible)next()},4200)};
-  document.getElementById('pdown').onclick=()=>{next();restart()};
-  document.getElementById('pup').onclick=()=>{prev();restart()};
-  idx.addEventListener('click',e=>{const b=e.target.closest('.pit');if(b){jump(+b.dataset.k);restart()}});
-  const sec=document.getElementById('programa');
-  sec.addEventListener('mouseenter',()=>paused=true);sec.addEventListener('mouseleave',()=>paused=false);
-  new IntersectionObserver(es=>es.forEach(e=>visible=e.isIntersecting),{threshold:.3}).observe(sec);
-  addEventListener('resize',()=>{tr.style.transition='none';go(i);void tr.offsetWidth;tr.style.transition=''});
-  mark();restart();
+// programa: la foto acompaña a la hora que se lee (sin movimiento automático)
+(()=>{const rows=[...document.querySelectorAll('#ptl .prow')],ph=[...document.querySelectorAll('#pphotos img')];
+  const show=k=>{rows.forEach((r,j)=>r.classList.toggle('on',j===k));ph.forEach((m,j)=>m.classList.toggle('on',j===k))};
+  const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)show(rows.indexOf(e.target))}),{rootMargin:'-42% 0px -42% 0px'});
+  rows.forEach((r,k)=>{r.addEventListener('mouseenter',()=>show(k));io2.observe(r)});
 })();
+
+// pestañas: flechas, Inicio y Fin
+function tabKeys(c){const bs=()=>[...c.querySelectorAll('[role=tab]')];
+  const sync=()=>bs().forEach(b=>b.tabIndex=b.getAttribute('aria-selected')==='true'?0:-1);
+  c.addEventListener('click',()=>setTimeout(sync));
+  c.addEventListener('keydown',e=>{const k=e.key;if(!['ArrowLeft','ArrowRight','Home','End'].includes(k))return;e.preventDefault();
+    const a=bs(),i=a.indexOf(document.activeElement);
+    const n=k==='Home'?0:k==='End'?a.length-1:(i+(k==='ArrowRight'?1:-1)+a.length)%a.length;a[n].focus();a[n].click()});
+  sync()}
 
 // dress code: hover/click cambia las 3 fotos
 const DR={
- w:{sub:'Las mujeres pueden elegir vestidos largos elegantes, en colores sólidos (sin estampados) de nuestra paleta.',hint:'Pasa el cursor o toca un color',
+ w:{sub:'Las mujeres pueden elegir vestidos largos elegantes, en colores sólidos (sin estampados) de nuestra paleta.',hint:'Pasen el cursor o toquen un color',
     sw:[['chocolate','Chocolate','#44231A'],['pistacho','Verde oliva','#6B7355'],['ciruela','Ciruela','#4D282F'],['vino','Vino','#4A1A2B']]},
- m:{sub:'Los hombres irán de smoking: camisa blanca y corbata negra.',hint:'Pasa el cursor o toca el color',sw:[['smoking','Negro','#0E0B0B']]}
+ m:{sub:'Los hombres irán de smoking: camisa blanca y corbata negra.',hint:'Pasen el cursor o toquen el color',sw:[['smoking','Negro','#0E0B0B']]}
 };
 const LK={
  vino:['Vino',['media/v-vino-1.jpg?v=202610141413','media/v-vino-2.jpg?v=202610141413','media/v-vino-3.jpg?v=202610141413']],
@@ -824,35 +803,43 @@ function showGroup(g){
 }
 document.querySelectorAll('#dtabs button').forEach(b=>b.addEventListener('click',()=>showGroup(b.dataset.g)));
 showGroup('w');
+['htabs','dtabs'].forEach(id=>tabKeys(document.getElementById(id)));tabKeys(document.querySelector('#hmap .hmode'));
 
 // confirmación de asistencia
 const RSVP={
   endpoint:'https://script.google.com/macros/s/AKfycbxIU7F3dN_pi3VJaQP_1had88HbDRrJ5JwE29NaXrvEF43PhzPk9DNxJi5jbQwOi0CeFQ/exec',
-  whatsapp:''    // alternativa: número con código de país, ej. 5217711234567
+  whatsapp:'',   // alternativa: número con código de país, ej. 5217711234567
+  contacto:'',   // WhatsApp o correo para dudas (aparece bajo Confirmar), ej. '+57 300 000 0000' o 'hola@ejemplo.com'
+  fechaLimite:'' // ej. '15 de enero de 2027' (aparece junto a "Cuéntanos si nos acompañas")
 };
+if(RSVP.fechaLimite){document.getElementById('rsvpDeadlineT').textContent=RSVP.fechaLimite;document.getElementById('rsvpDeadline').hidden=false}
+if(RSVP.contacto){const l=document.getElementById('rsvpHelpLink');l.textContent=RSVP.contacto;
+  l.href=RSVP.contacto.includes('@')?'mailto:'+RSVP.contacto:'https://wa.me/'+RSVP.contacto.replace(/\D/g,'');document.getElementById('rsvpHelp').hidden=false}
 (()=>{const m=document.getElementById('rsvpModal'),f=document.getElementById('rsvpForm'),
   done=document.getElementById('rDone'),err=document.getElementById('rErr'),send=document.getElementById('rSend'),
-  extra=document.getElementById('rExtra');let last=null;
-  const open=()=>{last=document.activeElement;f.hidden=false;done.hidden=true;err.hidden=true;send.disabled=false;m.hidden=false;document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('rName').focus(),30)};
-  const close=()=>{m.hidden=true;document.body.style.overflow='';if(last)last.focus()};
-  document.getElementById('rsvpOpen').addEventListener('click',open);
+  extra=document.getElementById('rExtra');let last=null,sent=false;
+  const inertOthers=on=>[...document.body.children].forEach(el=>{if(el!==m&&el.tagName!=='SCRIPT')el.inert=on});
+  const dirty=()=>[...new FormData(f).entries()].some(([k,v])=>k!=='asistencia'&&String(v).trim())||f.querySelector('input[name=asistencia]:checked');
+  const open=()=>{last=document.activeElement;if(sent){f.reset();extra.hidden=true;sent=false}f.hidden=false;done.hidden=true;err.hidden=true;send.disabled=false;send.textContent='Enviar confirmación';m.hidden=false;inertOthers(true);document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('rName').focus(),30)};
+  const close=()=>{m.hidden=true;inertOthers(false);document.body.style.overflow='';if(last)last.focus()};
+  document.querySelectorAll('[data-rsvp]').forEach(b=>b.addEventListener('click',open));
   document.getElementById('rsvpClose').addEventListener('click',close);
   document.getElementById('rClose2').addEventListener('click',close);
-  m.addEventListener('mousedown',e=>{if(e.target===m)close()});
+  m.addEventListener('mousedown',e=>{if(e.target===m&&(done.hidden===false||!dirty()))close()});
   addEventListener('keydown',e=>{if(e.key==='Escape'&&!m.hidden)close()});
   f.addEventListener('change',()=>{extra.hidden=!document.getElementById('rYes').checked});
-  const finish=(yes,msg)=>{f.hidden=true;done.hidden=false;
+  const finish=(yes,msg)=>{sent=true;f.hidden=true;done.hidden=false;
     document.getElementById('rDoneT').textContent=yes?'Nos vemos en Querétaro':'Te vamos a extrañar';
     document.getElementById('rDoneP').textContent=msg;};
   f.addEventListener('submit',async e=>{e.preventDefault();err.hidden=true;
     const d=Object.fromEntries(new FormData(f).entries());
-    if(!d.nombre||d.nombre.trim().length<3){err.textContent='Escribe tu nombre completo.';err.hidden=false;return}
-    if(!d.asistencia){err.textContent='Cuéntanos si nos acompañas.';err.hidden=false;return}
+    if(!d.nombre||d.nombre.trim().length<3){err.textContent='Escribe tu nombre completo.';err.hidden=false;document.getElementById('rName').focus();return}
+    if(!d.asistencia){err.textContent='Cuéntanos si nos acompañas.';err.hidden=false;document.getElementById('rYes').focus();return}
     const yes=d.asistencia==='si';
     const payload={fecha:new Date().toISOString(),nombre:d.nombre.trim(),asistencia:yes?'Sí':'No',
       acompanantes:yes?(d.acompanantes||'').trim():'',restricciones:yes?(d.restricciones||'').trim():'',
       telefono:(d.telefono||'').trim(),mensaje:(d.mensaje||'').trim()};
-    send.disabled=true;
+    send.disabled=true;send.textContent='Enviando…';
     try{
       if(RSVP.endpoint){
         await fetch(RSVP.endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
@@ -867,7 +854,7 @@ const RSVP={
         try{const k='rsvp_prueba';const a=JSON.parse(localStorage.getItem(k)||'[]');a.push(payload);localStorage.setItem(k,JSON.stringify(a))}catch(_){}
         finish(yes,'Modo de prueba: la respuesta quedó solo en este navegador.');
       }
-    }catch(x){err.textContent='No pudimos enviar tu respuesta. Intenta de nuevo en un momento.';err.hidden=false;send.disabled=false}
+    }catch(x){err.textContent='No pudimos enviar tu respuesta. Intenta de nuevo en un momento.';err.hidden=false;send.disabled=false;send.textContent='Enviar confirmación'}
   });
 })();
 
