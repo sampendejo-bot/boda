@@ -367,7 +367,7 @@ footer{background:#2A211E!important}
   <a href="#programa">Programa</a>
   <a href="#vestimenta">Vestimenta</a>
   <a href="#regalo">Regalo</a>
-  <a href="#rsvp">Confirmar</a>
+  <!-- OCULTO hasta definir Confirma.me: <a href="#rsvp">Confirmar</a> -->
 </nav>
 
 <button class="music" id="music" aria-label="Música" hidden><span class="ico">♪</span><span id="mtxt">Oye linda</span></button>
@@ -397,7 +397,7 @@ footer{background:#2A211E!important}
     <h1><span>Caro</span><span class="y">y</span><span>Juanfe</span></h1>
     <p class="date">Sábado, 20 de marzo del 2027</p>
     <p class="caps where">Ceremonia 5:00 PM<br>Hacienda La Bartola · Querétaro, Qro.</p>
-    <button class="btn" type="button" data-rsvp>Confirmar asistencia</button>
+    <button class="btn" type="button" data-rsvp hidden style="display:none">Confirmar asistencia</button>
   </div>
 </header>
 
@@ -634,15 +634,15 @@ footer{background:#2A211E!important}
 
 <section class="rsvp" id="rsvp">
   <div class="wrap fade">
-    <span class="caps eyebrow">Los esperamos</span>
-    <h2>Confirma tu <em>asistencia</em></h2>
-    <p class="lead">Cuéntanos si nos acompañas.<span id="rsvpDeadline" hidden> Fecha límite: <b id="rsvpDeadlineT"></b>.</span></p>
+    <span class="caps eyebrow" hidden style="display:none">Los esperamos</span>
+    <h2 hidden style="display:none">Confirma tu <em>asistencia</em></h2>
+    <p class="lead" hidden style="display:none">Cuéntanos si nos acompañas.<span id="rsvpDeadline" hidden> Fecha límite: <b id="rsvpDeadlineT"></b>.</span></p>
     <div class="rsvp-note">
       <span class="caps">Invitación personal e intransferible</span>
       <p class="nokids">Amamos a los más chiquitos, pero <b>los niños no están invitados</b> a esta celebración: es una noche solo para adultos.</p>
       <p>Vamos a disfrutar todos sin preocupaciones.</p>
     </div>
-    <button class="btn" id="rsvpOpen" type="button" data-rsvp>Confirmar</button>
+    <button class="btn" id="rsvpOpen" type="button" data-rsvp hidden style="display:none">Confirmar</button>
     <!-- Contacto: llena RSVP.contacto en el script y aparece aquí -->
     <p class="rsvp-help" id="rsvpHelp" hidden>¿Dudas? Escríbannos: <a id="rsvpHelpLink" target="_blank" rel="noopener"></a></p>
   </div>
