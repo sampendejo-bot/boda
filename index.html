@@ -529,6 +529,17 @@ body{padding-bottom:0}
  .music #mtxt{display:none}
 }
 @media(prefers-reduced-motion:reduce){.music .ico{animation:none}.hphotos img,.dgal img,.pphotos img{transition:none}}
+
+.gift-accounts{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px;text-align:left;border-top:1px solid rgba(90,20,40,.25);padding-top:26px}
+.gift-account{min-width:0}
+.gift-account h3{font-size:1.5rem;margin:0 0 14px;font-weight:400}
+.gift-account p{font:400 .85rem/1.8 var(--sans);margin:10px 0;letter-spacing:0}
+.gift-number{font-variant-numeric:tabular-nums;white-space:nowrap;user-select:all}
+.gift-copy{font:400 .78rem/1.4 var(--sans);color:var(--ivory);background:var(--olive);border:1px solid var(--olive);padding:12px 14px;margin-top:8px;cursor:pointer}
+.gift-copy:hover{filter:brightness(1.15)}
+.gift-copy:focus-visible{outline:2px solid var(--logo);outline-offset:4px}
+.gift-copy-status{font:400 .8rem/1.5 var(--sans);min-height:1.5em;margin:18px 0 0}
+@media(max-width:600px){.gift-accounts{grid-template-columns:1fr;gap:26px}.gift-account+.gift-account{border-top:1px solid rgba(90,20,40,.25);padding-top:24px}}
 </style>
 </head>
 <body>
@@ -814,10 +825,25 @@ body{padding-bottom:0}
     <span class="caps eyebrow">Un detalle</span>
     <h2>Lo más importante es celebrar <em>juntos</em></h2>
     <div class="gift-card">
-      <span class="caps">Regalo digital</span>
-      <p class="gift-big">Para quienes quieran tener un detalle con nosotros, hemos preparado una opción de regalo digital, sin complicaciones.</p>
-      <p class="gift-sub">Aquí encontrarán los datos de transferencia.</p>
-      <p class="gift-pending">Datos de transferencia · próximamente</p>
+      <p class="gift-big">Sabemos todo lo que implica acompañarnos y nos hace muy felices poder celebrar juntos. Si además quieren hacernos un regalo, pueden aportar a nuestra luna de miel.</p>
+      <p class="gift-sub">Les dejamos una opción en México y otra en Colombia, para que elijan la que les resulte más fácil. Gracias por ser parte de esta nueva aventura.</p>
+      <div class="gift-accounts">
+        <div class="gift-account">
+          <h3>Colombia</h3>
+          <p>Bancolombia · Cuenta de ahorros</p>
+          <p>Cuenta: <span class="gift-number">58297135811</span><br>C. C.: <span class="gift-number">1032357157</span></p>
+          <p>Concepto: Caro y Juanfe</p>
+          <button class="gift-copy" type="button" data-copy="58297135811">Copiar número de cuenta</button>
+        </div>
+        <div class="gift-account">
+          <h3>México</h3>
+          <p>BBVA · Cuenta de ahorros<br>Carolina Miranda</p>
+          <p>CLABE: <span class="gift-number">012222027646427087</span></p>
+          <p>Concepto: Caro y Juanfe</p>
+          <button class="gift-copy" type="button" data-copy="012222027646427087">Copiar CLABE</button>
+        </div>
+      </div>
+      <p class="gift-copy-status" role="status" aria-live="polite"></p>
     </div>
   </div>
 </section>
@@ -1080,6 +1106,19 @@ document.getElementById('enter').addEventListener('click',()=>{if(opening)return
 bgm.play().then(()=>{started=true;setUI()}).catch(()=>{splash.hidden=false;document.body.style.overflow='hidden'});
 mb.onclick=()=>{started=true;bgm.paused?bgm.play().then(setUI):(bgm.pause(),setUI())};
 bgm.addEventListener('play',setUI);bgm.addEventListener('pause',setUI);
+</script>
+<script>
+document.querySelectorAll('.gift-copy').forEach(button=>{
+  button.addEventListener('click',async()=>{
+    const status=document.querySelector('.gift-copy-status');
+    try{
+      await navigator.clipboard.writeText(button.dataset.copy);
+      status.textContent=button.dataset.copy.length===18?'CLABE copiada.':'Número de cuenta copiado.';
+    }catch{
+      status.textContent='Puedes seleccionar el número de arriba y copiarlo manualmente.';
+    }
+  });
+});
 </script>
 </body>
 </html>
